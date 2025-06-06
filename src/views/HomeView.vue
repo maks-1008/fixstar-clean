@@ -18,12 +18,12 @@ onMounted(async () => {
       <!-- Телефоны справа вверху -->
       <div class="phones-container">
         <div class="phone-item">
-          <img src="/images/Lifecell.png" alt="Lifecell" class="operator-icon" />
+          <img src="../assets/images/Lifecell.png" alt="Lifecell" class="operator-icon" />
           <a href="tel:063-447-48-46" class="phone-number">063-447-48-46</a>
         </div>
 
         <div class="phone-item">
-          <img src="/images/Vodafone.png" alt="Vodafone" class="operator-icon" />
+          <img src="../assets/images/Vodafone.png" alt="Vodafone" class="operator-icon" />
           <a href="tel:099-708-69-84" class="phone-number">099-708-69-84</a>
         </div>
       </div>
@@ -50,7 +50,7 @@ onMounted(async () => {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url('/images/bg-image4.jpg');
+  background-image: url('@/assets/images/bg-image4.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -127,7 +127,7 @@ onMounted(async () => {
 /* Медиа-запросы для мобильной адаптации */
 @media (max-width: 768px) {
   .background-container {
-    background-image: url('/images/bg-image5.jpg');
+    background-image: url('@/assets/images/bg-image5.jpg');
   }
 
   .phones-container {
@@ -173,5 +173,13 @@ onMounted(async () => {
     font-size: 14px;
     height: 30px;
   }
+}
+
+.modal-content {
+  border-radius: 12px;
+  background-image: url('@/assets/images/bg-image5.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 </style>

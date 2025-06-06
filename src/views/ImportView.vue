@@ -201,7 +201,7 @@ export default {
           name: row[nameIndex],
           code: codeIndex > -1 ? row[codeIndex] : '',
           price: priceIndex > -1 ? row[priceIndex] : 0,
-          image: imageIndex > -1 ? row[imageIndex] : '/images/goods/default.webp',
+          image: imageIndex > -1 ? row[imageIndex] : './images/goods/default.webp',
         }
 
         products.push(product)
@@ -265,7 +265,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url('/images/bg-image4.jpg');
+  background-image: url('./images/bg-image4.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

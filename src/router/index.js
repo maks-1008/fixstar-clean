@@ -7,7 +7,7 @@ import ContactsView from '../views/ContactsView.vue'
 import CategoryView from '../views/CategoryView.vue'
 
 const router = createRouter({
-  history: createWebHistory('/'),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',

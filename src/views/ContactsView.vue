@@ -8,24 +8,24 @@
 
         <div class="contacts-section">
           <div class="contact-item">
-            <img src="/images/location.png" alt="Адреса" />
+            <img src="@/assets/images/location.png" alt="Адреса" />
             <a href="https://surl.li/dtqmyl" target="_blank">
               Адреса: вул. Чумацький Шлях, 72, Полтава, Україна, 36000
             </a>
           </div>
 
           <div class="contact-item">
-            <img src="/images/Lifecell.png" alt="Lifecell" />
+            <img src="@/assets/images/Lifecell.png" alt="Lifecell" />
             <span>063-447-48-46</span>
           </div>
 
           <div class="contact-item">
-            <img src="/images/Vodafone.png" alt="Vodafone" />
+            <img src="@/assets/images/Vodafone.png" alt="Vodafone" />
             <span>099-708-69-84</span>
           </div>
 
           <div class="contact-item">
-            <img src="/images/email.png" alt="Email" />
+            <img src="@/assets/images/email.png" alt="Email" />
             <a href="mailto:office@fixstar.com.ua">office@fixstar.com.ua</a>
           </div>
         </div>
@@ -57,7 +57,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url('/images/bg-image4.jpg');
+  background-image: url('@/assets/images/bg-image4.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -175,7 +175,7 @@ h1 {
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .background-container {
-    background-image: url('/images/bg-image5.jpg');
+    background-image: url('@/assets/images/bg-image5.jpg');
   }
 
   .contacts-card {
