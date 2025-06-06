@@ -1,0 +1,21 @@
+Для отправки изменений на GitHub:
+
+1. Перейдите на https://github.com/settings/tokens и создайте новый токен:
+   - Нажмите "Generate new token (classic)"
+   - Дайте ему имя "Repo Access"
+   - Выберите scope "repo"
+   - Нажмите "Generate token"
+   - Скопируйте токен
+
+2. В Git Bash или командной строке выполните:
+git remote set-url origin https://USERNAME:TOKEN@github.com/maks-1008/fixstar.com.ua.git
+
+Где:
+- USERNAME: ваше имя пользователя на GitHub (maks-1008)
+- TOKEN: токен, который вы только что создали
+
+Например:
+git remote set-url origin https://maks-1008:ghp_abc123def456@github.com/maks-1008/fixstar.com.ua.git
+
+3. Затем выполните:
+git push origin main 
