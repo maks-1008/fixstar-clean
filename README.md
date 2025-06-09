@@ -14,8 +14,8 @@
 1. Клонувати репозиторій
 
 ```
-git clone https://github.com/maks-1008/fixstar.com.ua.git
-cd fixstar.com.ua
+git clone https://github.com/maks-1008/fixstar-clean.git
+cd fixstar-clean
 ```
 
 2. Встановити залежності
@@ -39,4 +39,4 @@ npm run build
 ## Деплой на GitHub Pages
 
 Веб-сайт автоматично розгортається при пуші в гілку `main` через GitHub Actions і доступний за адресою:
-https://maks-1008.github.io/fixstar.com.ua/
+https://maks-1008.github.io/fixstar-clean/
