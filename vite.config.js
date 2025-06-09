@@ -12,7 +12,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '',
+  base: '/fixstar-clean/',
   build: {
     outDir: 'dist',
     assetsInlineLimit: 0, // Відключаємо інлайн малих файлів
