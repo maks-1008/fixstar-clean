@@ -5,7 +5,8 @@
       <button
         class="navbar-toggler"
         type="button"
-        @click="toggleMobileMenu"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"

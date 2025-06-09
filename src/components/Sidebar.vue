@@ -450,32 +450,33 @@ export default {
 <style scoped>
 .sidebar {
   position: fixed;
-  top: 80px;
-  left: 80px;
+  top: 56px; /* Высота навигационной панели */
+  left: 0;
+  width: 180px; /* Уменьшаем ширину сайдбара */
+  height: 100vh; /* Высота на весь экран */
   z-index: 1000;
-  width: 180px;
+  padding-top: 20px;
+  overflow-y: auto; /* Добавим прокрутку если нужно */
 }
 
 .category-menu {
-  position: relative;
+  width: 100%;
 }
 
 .category-btn {
-  width: 100%;
-  text-align: left;
-  padding: 10px;
-  margin-bottom: 10px;
+  width: 180px; /* Уменьшаем ширину кнопок */
+  padding: 10px 15px;
+  margin-bottom: 5px;
   background-color: #343a40;
+  color: white;
   border: none;
   border-radius: 5px;
-  color: white;
+  text-align: left;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: relative;
-  z-index: 1;
 }
 
 .category-btn:hover {
@@ -572,54 +573,33 @@ export default {
   display: none !important;
 }
 
-/* Медиа-запросы для мобильной адаптации */
+/* Медиа-запросы для адаптивности */
 @media (max-width: 768px) {
   .sidebar {
-    position: fixed;
-    left: 10px;
-    top: 60px;
-    z-index: 100;
+    width: 150px; /* Еще меньше на мобильных */
   }
 
   .category-btn {
-    font-size: 14px;
-    min-width: auto;
+    width: 150px;
+    font-size: 0.9rem;
     padding: 8px 12px;
-  }
-
-  .dropdown-menu {
-    min-width: 200px;
-    left: 0;
-  }
-
-  .submenu {
-    left: calc(100% - 30px);
   }
 }
 
-/* Для очень маленьких экранов */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   .sidebar {
-    left: 5px;
-    top: 55px;
+    width: 120px; /* Минимальная ширина для телефонов */
   }
 
   .category-btn {
-    font-size: 13px;
-    padding: 6px 10px;
+    width: 120px;
+    font-size: 0.85rem;
+    padding: 8px 10px;
   }
 
-  .dropdown-menu {
-    min-width: 180px;
-  }
-
-  .dropdown-item {
-    padding: 6px 8px;
-    font-size: 13px;
-  }
-
-  .submenu {
-    left: calc(100% - 50px);
+  .category-btn i {
+    margin-right: 5px;
+    font-size: 0.9rem;
   }
 }
 </style>
