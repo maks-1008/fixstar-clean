@@ -60,7 +60,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url('/images/bg-image4.jpg');
+  background-image: url('@/assets/images/bg-image4.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -91,6 +91,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  max-height: 80vh;
+  overflow-y: auto;
   animation: cardAppear 0.5s ease-out;
 }
 
@@ -183,7 +185,7 @@ p {
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .background-container {
-    background-image: url('/images/bg-image5.jpg');
+    background-image: url('@/assets/images/bg-image5.jpg');
   }
 
   .about-view {
