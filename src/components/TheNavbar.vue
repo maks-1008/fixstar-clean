@@ -33,7 +33,7 @@
                 <router-link
                   class="dropdown-item text-white"
                   to="/delivery"
-                  @click="closeDropdowns"
+                  @click="closeAllAndCollapse"
                 >
                   Доставка і оплата
                 </router-link>
@@ -42,24 +42,32 @@
                 <router-link
                   class="dropdown-item text-white"
                   to="/contacts"
-                  @click="closeDropdowns"
+                  @click="closeAllAndCollapse"
                 >
                   Контактна інформація
                 </router-link>
               </li>
               <li>
-                <router-link class="dropdown-item text-white" to="/about" @click="closeDropdowns">
+                <router-link
+                  class="dropdown-item text-white"
+                  to="/about"
+                  @click="closeAllAndCollapse"
+                >
                   Про нас
                 </router-link>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link text-white" to="/cart">Кошик</router-link>
+            <router-link class="nav-link text-white" to="/cart" @click="closeAllAndCollapse"
+              >Кошик</router-link
+            >
           </li>
           <!-- Вхід - теперь переходит на страницу входа -->
           <li class="nav-item" v-if="!isAuthenticated">
-            <router-link class="nav-link text-white" to="/login">Вхід</router-link>
+            <router-link class="nav-link text-white" to="/login" @click="closeAllAndCollapse"
+              >Вхід</router-link
+            >
           </li>
           <!-- Мій профіль с выпадающим меню -->
           <li class="nav-item dropdown" v-else :class="{ show: profileDropdownOpen }">
@@ -73,22 +81,36 @@
             </a>
             <ul class="dropdown-menu" :class="{ show: profileDropdownOpen }">
               <li>
-                <router-link class="dropdown-item text-white" to="/cart" @click="closeDropdowns">
+                <router-link
+                  class="dropdown-item text-white"
+                  to="/cart"
+                  @click="closeAllAndCollapse"
+                >
                   Кошик
                 </router-link>
               </li>
               <li>
-                <router-link class="dropdown-item text-white" to="/profile" @click="closeDropdowns">
+                <router-link
+                  class="dropdown-item text-white"
+                  to="/profile"
+                  @click="closeAllAndCollapse"
+                >
                   Особистий кабінет
                 </router-link>
               </li>
               <li v-if="isAdmin">
-                <router-link class="dropdown-item text-white" to="/admin" @click="closeDropdowns">
+                <router-link
+                  class="dropdown-item text-white"
+                  to="/admin"
+                  @click="closeAllAndCollapse"
+                >
                   Адмін панель
                 </router-link>
               </li>
               <li>
-                <a class="dropdown-item text-white" href="#" @click.prevent="logout"> Вийти </a>
+                <a class="dropdown-item text-white" href="#" @click.prevent="logoutAndClose">
+                  Вийти
+                </a>
               </li>
             </ul>
           </li>
@@ -178,7 +200,14 @@ export default {
       this.userDropdownOpen = false
     },
     toggleMobileMenu() {
-      this.mobileMenuOpen = !this.mobileMenuOpen
+      // Поскольку мы используем Bootstrap, этот метод будем использовать
+      // только для закрытия меню программно
+      const navbarCollapse = document.getElementById('navbarSupportedContent')
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        // Закрываем меню - имитируем клик по кнопке
+        document.querySelector('.navbar-toggler').click()
+      }
+      this.mobileMenuOpen = false
     },
     closeDropdowns() {
       this.infoDropdownOpen = false
@@ -197,6 +226,14 @@ export default {
     searchProducts() {
       // Реализация поиска товаров
       console.log('Поиск:', this.searchQuery)
+    },
+    closeAllAndCollapse() {
+      this.closeDropdowns()
+      this.toggleMobileMenu()
+    },
+    logoutAndClose() {
+      this.logout()
+      this.closeAllAndCollapse()
     },
   },
 }
