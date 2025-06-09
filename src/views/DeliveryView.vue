@@ -142,6 +142,7 @@ li {
   margin-bottom: 6px;
   line-height: 1.4;
   font-size: 1rem;
+  color: #333;
 }
 
 li:last-child {
@@ -152,6 +153,7 @@ p {
   margin: 0;
   line-height: 1.5;
   font-size: 1rem;
+  color: #333;
 }
 
 /* Копирайт */

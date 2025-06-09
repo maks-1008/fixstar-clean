@@ -153,6 +153,7 @@ li {
   margin-bottom: 8px;
   line-height: 1.5;
   font-size: 1rem;
+  color: #333;
 }
 
 p {
